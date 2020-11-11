@@ -1,0 +1,22 @@
+total 64
+-rw-r--r--  1 ardeeter  staff  201 Nov 10 09:38 deserts.txt
+-rw-r--r--  1 ardeeter  staff  174 Nov 10 09:38 glaciers.txt
+-rw-r--r--  1 ardeeter  staff  130 Nov 10 09:38 islands.txt
+-rw-r--r--  1 ardeeter  staff   97 Nov 10 09:38 lakes.txt
+-rw-r--r--  1 ardeeter  staff  112 Nov 10 09:38 mountains.txt
+-rw-r--r--  1 ardeeter  staff    0 Nov 10 12:31 myDirectoryContents.txt
+-rw-r--r--  1 ardeeter  staff    6 Nov 10 12:29 newFile.txt
+-rw-r--r--  1 ardeeter  staff   69 Nov 10 09:38 oceans.txt
+-rw-r--r--  1 ardeeter  staff  192 Nov 10 09:38 volcanoes.txt
+.
+..
+.gitignore
+deserts.txt
+glaciers.txt
+islands.txt
+lakes.txt
+mountains.txt
+myDirectoryContents.txt
+newFile.txt
+oceans.txt
+volcanoes.txt
