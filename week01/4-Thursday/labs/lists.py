@@ -10,14 +10,23 @@ planet6 = "Mercury"
 planet7 = "Uranus"
 planet8 = "Venus"
 
-# 2. Print out how many elements are in the planet list
+planets = ["Earth", "Jupiter", "Neptune", "Mars", "Saturn", "Mercury", "Uranus", "Venus"]
+print(planets)
 
+# 2. Print out how many elements are in the planet list
+lenOfPlanets = len(planets)
+print(lenOfPlanets)
 
 # 3. Create a while loop that iterates through each of the items in the planet list
 # and changes them to lowercase .
-
+x = 0
+while x < lenOfPlanets:
+   print(planets[x].lower())
+   x += 1 
 
 # 4. Add Pluto to the planet list.
+planets.append("Pluto")
+print(planets)
 
 
 # 5. Combine the follwing 2 lists into a list called Houston.
@@ -29,15 +38,35 @@ HoustonCities = ["Katy", "Memorial City", "Sugar Land",
                  "The Heights", "River Oaks", "Pasadena"]
 ClearLakeCities = ["League City", "Kemah", "Seabrook", "Webster", "El Lago"]
 
-# 6. Since Pluto isn't really a planet, delete it from the planet list
+Houston = HoustonCities + ClearLakeCities
+lenOfHouston = len(Houston)
 
+print(Houston)
+print(lenOfHouston)
+
+
+
+# 6. Since Pluto isn't really a planet, delete it from the planet list
+planets.pop()
+print(planets)
 
 # 7. Create the following lists that are a subset of the Houston list:
 # htx1 = The first 4 cities
 # htx2 = Cities 3-6
 # htx3 = The last 2 cities
 
+htx1 = Houston[:4]
+print(htx1)
+
+htx2 = Houston[2:6]
+print(htx2)
+
+htx3 = Houston[-2:]
+print(htx3)
+
 # 7. Insert Denver in the Houston list after The Heights
+Houston.insert(4, Denver)
+
 
 # 8.  Remove the last city from the Houston List
 
