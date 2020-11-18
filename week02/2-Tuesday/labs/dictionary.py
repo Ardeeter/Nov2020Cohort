@@ -125,20 +125,20 @@
 
 # >>> word_histogram('To be or not to be')
 
-# def word_histogram(paragraph):
-#     count_of_word = {}
-#     lower_paragraph = paragraph.lower()
-#     words = lower_paragraph.split()
-#     for word in words:
-#         count_of_word[word] = int(words.count(word))
-#         # if word in count_of_word:
-#         #     count_of_word[word] += 1
-#         # else:
-#         #     count_of_word[word] = 1
-#     return count_of_word
+def word_histogram(paragraph):
+    count_of_word = {}
+    lower_paragraph = paragraph.lower()
+    words = lower_paragraph.split()
+    for word in words:
+        count_of_word[word] = int(words.count(word))
+        # if word in count_of_word:
+        #     count_of_word[word] += 1
+        # else:
+        #     count_of_word[word] = 1
+    return count_of_word
 
-# input_paragraph = input('Please enter a paragraph: ')
-# print(word_histogram(input_paragraph))
+input_paragraph = input('Please enter a paragraph: ')
+print(word_histogram(input_paragraph))
 
 # Sorting a histogram
 # Given a histogram tally (one returned from either letter_histogram
@@ -146,10 +146,10 @@
 
 # def sorting_histogram(word):
 #     dictionary_histogram = letter_histogram(word)
+#     sorted_string = ""
 #     for key in sorted(dictionary_histogram):
-#         print(f"{key}: {dictionary_histogram[key]}")
-
-#     exit()
+#         sorted_string += (f"{key}: {dictionary_histogram[key]}\n")
+#     return sorted_string.strip()
 
 
 # input_word = input("Please enter a word: ")
