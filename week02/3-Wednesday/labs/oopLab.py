@@ -1,18 +1,39 @@
 
 
 # 1. Create an empty class called "Student"
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
 
+#     def greeting(self):
+#         return (f"Good morning {self.name}")
 
 # 2. Create 5 students objects (instances of the class "Student") of "Student" types
+# kanny = Student("Kanny")
+# matthew = Student("Matthew")
+# joe = Student("Joe")
+# kim = Student("Kim")
+# adam = Student("Adam")
 
+# print(kanny.greeting())
+# print(matthew.greeting())
+# print(joe.greeting())
+# print(kim.greeting())
+# print(adam.greeting())
 
 # 3a. Create a "greeting" method inside of the class "Student" class that
 # takes as a parameter "name". The return of the  method should be
 # "Good morning {name}"
 
 
+
 # 4. Call the greet  method on each of the students in # 5 passing in a different
 # name argument each time.
+# print(kanny.greeting('Kanny'))
+# print(matthew.greeting('Matthew'))
+# print(joe.greeting('Joe'))
+# print(kim.greeting('Kim'))
+# print(adam.greeting('Adam'))
 
 # 5a. Create a constructor for the Student class.
 # 5b. Create a print statement inside of the constructor
@@ -59,17 +80,45 @@
 # Create a new class called Car with the following method :
 # CarDetails which prints "Here are details of this car"
 
+class Car:
+    def __init__(self, make, model, color):
+        self.make = make
+        self.model = model
+        self.color = color
+
+    def CarDetails(self):
+        print(f'''
+        Here are the car details:
+        Make: {self.make}
+        Model: {self.model}
+        Color: {self.color}
+        ''')
+
 # Create a new class called Hybrid that inherits from the Car class
 #  with the following method: CarType which prints "I am a hybrid car"
+class Hybrid(Car):
+    def CarType(self):
+        print("I am a hybrid car.")
+
 
 
 # Create a new class called Electric that inherits from the Car class
 #  with the following  method: CarType which prints "I am a hybrid car"
+class Electric(Car):
+    def CarType(self):
+        print("I am an electric car.")
 
 # Create a Hybrid instance and an Electric instance
 # Call the method CarType on the Hybrid Instance and Electric Instance
 # Call the method Car Details on each instance
 
+prius = Hybrid("Toyota", "Prius", "Silver")
+prius.CarType()
+prius.CarDetails()
+
+tesla = Electric("Telsa", "Model X", "Black")
+tesla.CarType()
+tesla.CarDetails()
 
 # Add the following instance variables to the Car class :
 # - make
