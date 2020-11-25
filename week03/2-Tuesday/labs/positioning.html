@@ -6,6 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+        body{
+
+        }
+
+        .rel{
+            position: relative;
+            background-color: yellow;
+            bottom: 150px;
+            left: 100px;
+            margin: 15px 0 15px 0;
+        }
+
+        .main{
+            position: relative;
+        }
+
+        .abs{
+            background-color: green;
+            top: 15px;
+
+        }
+
+        .fixed{
+            position: fixed;
+            top: 10px;
+            background-color: pink;
+            z-index: 100;
+        }
+
+        img{
+            position: sticky;
+            top: 30px;
+            z-index: 10;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -38,14 +75,14 @@
         ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
     </div>
 
-    <!-- <div id="kittens">
-        <img src="images/kittens3.jpg" alt="">
-    </div> -->
-
-    <div id="navbar">
-        navbar
+    <div id="kittens">
+        <img src="images/kittens3.jpg" height= 300px alt="">
     </div>
-    <div class="rel">
+
+   <!-- <div id="navbar">
+        navbar
+    </div> -->
+    <div class="fixed">
         The preamble sets the stage for the Constitution (Archives.gov). It clearly communicates the intentions of the
         framers and the purpose of the document. The preamble is an introduction to the highest law of the land; it is
         not the law. It does not define government powers or individual rights.
