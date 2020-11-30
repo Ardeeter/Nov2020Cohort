@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: purple;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .body{
+            margin: 0px;
+        }
+
+        nav{
+            background-color: rgb(204, 204, 204);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li{
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        ul{
+            display: flex;
+
+        }
+
+        @media screen and (max-width: 650px){
+            .container{
+                background-color: green;
+                width: 50vw;
+                height: 100vh;
+            }
+
+            nav{
+            background-color: rgb(204, 204, 204);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            }
+
+            li{
+                list-style-type: none;
+                padding: 10px;
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+    </style>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>Company Logo</li>
+            </ul>
+            <ul>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Shopping</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
