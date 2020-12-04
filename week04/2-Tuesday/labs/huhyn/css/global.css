@@ -1,0 +1,76 @@
+/*
+black #000000
+navy #14213D
+orange #FCA311
+grey #E5E5E5
+white #FFFFFF
+
+font, bgc
+*/
+
+body{
+    margin: 0;
+}
+
+
+
+/* Background Colors */
+
+.cp-bg-black{
+    background-color: #000000;
+}
+
+.cp-bg-navy{
+    background-color: #14213D;
+}
+
+.cp-bg-accent{
+    background-color: #FCA311;
+}
+
+.cp-bg-grey{
+    background-color: #E5E5E5;
+}
+
+.cp-bg-white{
+    background-color: #FFFFFF;
+}
+
+.cp-bg-dark{
+    background-color: #665f5f96;
+}
+
+/* Font Colors */
+
+.cp-text-black{
+    color: #000000;
+}
+
+.cp-text-navy{
+    color: #14213D;
+}
+
+.cp-text-accent{
+    color: #FCA311;
+}
+
+.cp-text-grey{
+    color: #E5E5E5;
+}
+
+.cp-text-white{
+    color: #FFFFFF;
+}
+
+.dark{
+    background-color:#E5E5E5;
+    width: 100%;
+    height: 400px;
+}
+
+.light{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 400px;
+}
+
