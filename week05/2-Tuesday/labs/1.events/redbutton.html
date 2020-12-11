@@ -41,4 +41,30 @@
 
     
 </body>
+
+<script>
+    // // retrieve element out of the DOM
+    // let bigRedButton = document.querySelector('#big-red-button')
+
+    // // attach onclick event
+    // let counter = 0;
+    // let countDiv = document.querySelector('#count');
+
+    // bigRedButton.onclick = ()=>{
+    //     counter++;
+    //     countDiv.textContent = counter.toString();
+    // }
+    
+    let count = 0;
+    let bigRedButton = document.querySelector('#big-red-button');
+    let countDiv = document.querySelector('#count');
+
+    bigRedButton.addEventListener('click', ()=>{
+        count++;
+        countDiv.textContent = count;
+    })
+
+
+</script>
+
 </html>

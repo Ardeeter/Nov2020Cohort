@@ -18,9 +18,39 @@
     <li><img src="images/red.gif" alt="red" id="red"></li>
   </ul>
 
+  <div id="response">
+    
+  </div>
   
   <script>
+    //choose an image
+    // let pink = document.querySelector("#pink");
+    // let response = document.querySelector("#response");
 
+    //when  image clicks on image
+    // pink.addEventListener('click', () => {
+    //   response.textContent = "You've clicked on the pink image"; 
+    // });
+
+    //alert
+
+    // retrive ul tag and retrieve response div
+    let ul = document.querySelector('ul');
+    let response = document.querySelector('#response');
+  
+
+    // attach el to ul tag
+    ul.addEventListener('click', (e) =>{
+        switch(e.target.id){
+          case e.target.id:
+            response.textContent = `You've picked a ${e.target.id} image`;
+            break;
+          default: 
+            response.textContent = "Color not found"
+        }
+    })
+
+    //choose an image
     
   </script>
 
