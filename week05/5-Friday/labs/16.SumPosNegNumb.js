@@ -13,8 +13,9 @@ it should return an object like this:
 */
 
 
-var nums = [10, -12, 30, -1, -8, 0, 14, -33, 20];
-var numbs = {plus:0, minus:0};
+// 
+
+// var numbs = {plus:0, minus:0};
 
 // Write code here
 // function sumPlusMinus(arr){
@@ -43,7 +44,7 @@ let sumPlusMinus = arr => {
     }, {plus:0, minus:0})
 }
 
-
+var nums = [10, -12, 30, -1, -8, 0, 14, -33, 20];
 console.log(sumPlusMinus(nums));
 // {plus: 74, minus: -54}
 
