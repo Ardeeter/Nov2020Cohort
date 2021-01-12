@@ -12,6 +12,10 @@ app.use(require('./routes/index'))
 
 app.use(require('./routes/speakers'))
 
+app.use(require('./routes/feedback'))
+
+app.use(require('./routes/api'))
+
 
 
 
