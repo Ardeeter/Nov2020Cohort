@@ -46,6 +46,15 @@
             </div><!-- row -->
         </div><!-- container -->
         <% include partials/template/jsdefault.ejs %>
+
+        <% if (pageID === 'feedback') { %>
+            <script src="/js/feedback.js"></script>
+        <% } %>
+
+        <% if (pageID === 'chat') { %>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+            <script src="/js/chat.js"></script>
+        <% } %>
 </body>
 
 </html>

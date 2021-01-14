@@ -24,9 +24,10 @@ io.on('connection', (socket) => {
     console.log('Client connected');
     socket.emit('chatMessage', {msg: "Hello from our backend"})
 
-    socket.on('msgFromClient', (msgClient) =>{
+    socket.on('msgFromClient', (msg) =>{
 
         // broadcasting out to all connected clients
-        io.emit('msgFromServer', msgClient)
-    })
+        io.emit('msgFromServer', msg)
+
+    }) // end of event listener
 })
