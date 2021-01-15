@@ -67,3 +67,97 @@
 -- RIGHT JOIN author 
 -- ON articles.author_id = author.id;
 
+-- CREATE TABLE groups (
+--     id SERIAL PRIMARY KEY,
+--     name varchar(100)
+-- );
+-- CREATE TABLE member (
+--     id SERIAL PRIMARY KEY,
+--     name varchar(25)
+-- );
+-- CREATE TABLE membership(
+--     id SERIAL PRIMARY KEY,
+--     group_id integer REFERENCES groups (id),
+--     member_id integer REFERENCES member (id)
+-- );
+-- INSERT INTO groups VALUES 
+-- (DEFAULT, 'Atlanta JavaScript Meetup'),
+-- (DEFAULT, 'PyLadies'),
+-- (DEFAULT, 'Girl Develop It'),
+-- (DEFAULT, 'Atlanta Web Design Group');
+-- INSERT INTO member VALUES
+-- (DEFAULT, 'Alfie'),
+-- (DEFAULT, 'Michael'),
+-- (DEFAULT, 'Tarek'),
+-- (DEFAULT, 'Kevin'),
+-- (DEFAULT, 'Glen'),
+-- (DEFAULT, 'David'),
+-- (DEFAULT, 'Ollie'),
+-- (DEFAULT, 'Chris'),
+-- (DEFAULT, 'Sabrina'),
+-- (DEFAULT, 'Garrett'),
+-- (DEFAULT, 'Jeroen'),
+-- (DEFAULT, 'Deron');
+-- INSERT INTO membership VALUES 
+-- (DEFAULT, 1, 9),
+-- (DEFAULT, 2, 9),
+-- (DEFAULT, 3, 9),
+-- (DEFAULT, 4, 9),
+-- (DEFAULT, 1, 2),
+-- (DEFAULT, 2, 2),
+-- (DEFAULT, 2, 3),
+-- (DEFAULT, 2, 4),
+-- (DEFAULT, 2, 5),
+-- (DEFAULT, 3, 6),
+-- (DEFAULT, 3, 7),
+-- (DEFAULT, 3, 8),
+-- (DEFAULT, 4, 9);
+
+-- SELECT * 
+-- FROM groups
+-- INNER JOIN membership
+-- ON groups.id = membership.group_id
+-- INNER JOIN member 
+-- ON membership.group_id = member.id; 
+
+
+--cartesian join
+-- CREATE TABLE blouses(
+--     id SERIAL PRIMARY KEY,
+--     description varchar(100)
+-- );
+-- INSERT INTO blouses VALUES
+-- (DEFAULT, 'red polka dots'),
+-- (DEFAULT, 'yellow sun flowers'),
+-- (DEFAULT, 'white with brown buttons'),
+-- (DEFAULT, 'coding t-shirt');
+-- CREATE TABLE pants(
+--     id SERIAL PRIMARY KEY,
+--     description varchar(100)
+-- );
+-- INSERT INTO pants VALUES
+-- (DEFAULT, 'blue jeans'),
+-- (DEFAULT, 'black jeans'),
+-- (DEFAULT, 'brown bell bottoms'),
+-- (DEFAULT, 'blue slacks');
+-- CREATE TABLE shoes(
+--     id SERIAL PRIMARY KEY,
+--     description varchar(100)
+-- );
+-- INSERT INTO shoes VALUES
+-- (DEFAULT, 'black jordans'),
+-- (DEFAULT, 'red high heels'),
+-- (DEFAULT, 'yellow flip flops'),
+-- (DEFAULT, 'brown birkenstock');
+
+-- SELECT *
+-- FROM blouses, pants, shoes
+
+
+
+
+
+
+
+
+
