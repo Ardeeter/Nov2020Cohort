@@ -34,8 +34,6 @@ let db = require('./models');
 //     console.log(updatedRecord[0]);
 // })
 
-
-
 // db.user.create({
 //     firstName: "Andrea",
 //     lastName: "Myers",
