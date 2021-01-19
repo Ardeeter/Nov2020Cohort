@@ -58,3 +58,17 @@ let db = require('./models');
 //     email: "cedael@dc.com"
 // });
 
+db.blogs.findAll({
+
+    where: {userID: 1},
+    include: [{
+        model: db.user,
+        required: true
+    }]
+})
+.then(records => {
+    //[{}, {}, {}]
+    records.forEach(blog =>{
+        console.log(blog.title, blog.user.firstName, blog.user.lastName);
+    })
+})
