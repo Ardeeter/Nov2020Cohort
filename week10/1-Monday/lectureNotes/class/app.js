@@ -60,7 +60,7 @@ let db = require('./models');
 
 db.blogs.findAll({
 
-    where: {userID: 1},
+    where: {title: 'Promises'},
     include: [{
         model: db.user,
         required: true
