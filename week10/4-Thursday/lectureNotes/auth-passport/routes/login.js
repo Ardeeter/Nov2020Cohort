@@ -4,9 +4,9 @@ const router = express.Router();
 router.use(express.urlencoded({extended:false}));
 router.use(express.json());
 
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
 
-    res.send('Login')
+    res.render('login')
     
 })
 
