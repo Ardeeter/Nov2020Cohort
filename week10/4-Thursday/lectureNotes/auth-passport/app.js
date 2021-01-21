@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
-var cookieSession = require('cookie-session');
 const helmet = require('helmet');
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
+const passport= require('passport');
+require('./auth/passport-config')(passport);
+
+
+var cookieSession = require('cookie-session');
 app.use(cookieSession({
     name: 'session',
     keys: ['lsdjfs;ldjs;lkjdl;skdjf;lsdkjf'],
@@ -19,6 +23,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(helmet());
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 // sub-routes
 app.use(require('./routes'));

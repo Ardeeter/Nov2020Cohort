@@ -7,6 +7,8 @@ install:
 - pg-hstore
 - helmet
 - bcryptjs
+- passport-local 
+- passport
 
 routes
 - homepage -> get
