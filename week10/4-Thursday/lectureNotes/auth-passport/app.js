@@ -3,6 +3,9 @@ const app = express();
 var cookieSession = require('cookie-session');
 const helmet = require('helmet');
 
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
 app.use(cookieSession({
     name: 'session',
     keys: ['lsdjfs;ldjs;lkjdl;skdjf;lsdkjf'],

@@ -6,6 +6,7 @@ install:
 - pg 
 - pg-hstore
 - helmet
+- bcryptjs
 
 routes
 - homepage -> get
@@ -15,5 +16,7 @@ routes
 - registration -> post
 
 ejs 
--
+- index
+- login -> form
+- registration -> form
 
