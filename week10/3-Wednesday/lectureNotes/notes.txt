@@ -1,0 +1,34 @@
+Author / Title / Contents / Form(to submit blog)
+
+Page 1 : List of Links to Different Articles
+- Use IDs for the query string parameter
+
+Page 2: Article
+- Displays Article that was clicked on
+
+Page 3: Form
+- Title
+- Contents
+- Button to publish
+- Publish date 
+- Drop Down with Author Names
+
+For Author:
+- id
+- firstName
+- lastName
+- bio 
+- imageURL
+- email 
+- twitter 
+- linkedIn 
+
+For Blogs:
+- id 
+- title 
+- authorID 
+- body 
+- isPublished 
+- publishDate (before today's date and isPublished = true to be displayed)
+
+
