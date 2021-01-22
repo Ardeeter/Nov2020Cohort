@@ -11,6 +11,8 @@ const db = require('../models');
 const init = (passport) => {
 
     passport.use( new LocalStrategy((username, password, done) =>{
+
+        console.log(`inside passport.use: username ${username}. password: ${password}`);
         
         db.users.findAll({where: {username: username}})
         .then(records =>{
@@ -58,6 +60,7 @@ const init = (passport) => {
 
         // 5, 7
 
+        console.log(`deserializing user`);
         db.users.findByPk(id)
         .then(record =>{
             done(null, record)
