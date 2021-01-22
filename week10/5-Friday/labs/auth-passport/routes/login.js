@@ -8,6 +8,8 @@ router.get("/login",  (req, res) => {
 });
 
 
-router.post('/login', passport.authenticate('local', {successRedirect: '/protected', failureRedirect: '/login'}))
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/protected', failureRedirect: '/login'
+}))
 
 module.exports = router;
