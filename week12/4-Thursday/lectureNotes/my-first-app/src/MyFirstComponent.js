@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 let MyFirstComponent = (params) => {
     return (
       <div>
