@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Contacts from './components/Contacts';
 import data from './data/contacts'
+import Days from './components/Days'
+import DropDown from './components/DropDown';
+import Button from './components/Button';
 
 class App extends Component {
   render() {
@@ -43,9 +46,16 @@ class App extends Component {
     return (
       <>
 
-      {contactArr}
+      <Days />
+      <DropDown />
+      <Button color="info" text="Info" />
+      <Button color="warning" text="Warning" />
+      <Button color="danger" text="Danger" />
+      <Button color="primary" text="Primary" />
 
-      {allContacts}
+      {/* {contactArr}
+
+      {allContacts} */}
 
       {/* <Contacts firstName={contacts[0].firstName} lastName={contacts[0].lastName} phone={contacts[0].phoneNum} email={contacts[0].email}/>
       <Contacts firstName={contacts[1].firstName} lastName={contacts[1].lastName} phone={contacts[1].phoneNum} email={contacts[1].email}/>
