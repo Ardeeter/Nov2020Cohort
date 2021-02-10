@@ -1,49 +1,91 @@
 import React, { useEffect, useState } from 'react'
 import MovieDetail from './components/MovieDetail';
 
+/**
+ * 1. fetch our movie data
+ * 2. store our data inside state 
+ * 3. map through data display movie list 
+ * 4. attach to each movie a event listenter with imdbID 
+ * 5. when user click on movie, el will be fired: make a call the movie api with id
+ * 6. set details of clicked on movie to antothe state variable 
+ * 7. when state variable is updated 
+ * 8. re-render our app, which will pass new info to child : MovieData
+ * 
+ */
 const App = () => {
-
   const [movieData, setMovieData] = useState([]);
   const [currentMovie, setCurrentMovie] = useState({});
+  const [cache, setCache] = useState({})
 
-  useEffect(() => {
+useEffect(() => {
 
-    const getMovieData = async () => {
-      
-      let apiCall = await fetch (`http://www.omdbapi.com/?s=batman&apikey=3e97afb3`)
+  const getMovieData = async() => {
+
+      let apiCall = await fetch('http://www.omdbapi.com/?s=batman&i=tt3896198&apikey=390a6051');
       let data = await apiCall.json();
 
-      setMovieData(data.Search)
-    }
+      //data.Search 
+      setMovieData(data.Search);
 
-    getMovieData();
+  }//  end getMovieData
 
-    console.log(movieData);
+  getMovieData();
+  console.log(movieData);
 
-  }, [])
+}, [])//end of useEffect
 
-  const handleClicked = async () => {
-    console.log('Clicked');
-
-    const apiData = await fetch `http://www.omdbapi.com/?i=${movieData.imdbID}&apikey=74b5f590`
-    const data = await apiData.json(); 
-    setCurrentMovie(data);
-  }
+const handleClick = async (movie) => {
   
+    console.log('clicked', movie);
 
-  return (
-    <>
-      {movieData.map(movieObj => {
-        return (<button onClick={handleClicked} key={movieObj.imdbID}>
-          <h3>{movieObj.Title}</h3>
-          <img height='150px' src={movieObj.Poster} alt=""/>
-        </button>)
-      })}
+    //make api call here based on the clicked movie
+      // let cache = {
+      //     "tt4567" : {},
+      //     "tt7896" : {}
+      // }
 
-      <MovieDetail movie={currentMovie}/>
-    </>
-  )
+  if(cache[movie.imdbID] === undefined )
+  {
+
+      //make an api call
+      //store the new key in our cache 
+      // setCurrentMovie()
+
+      const apiData = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=74b5f590`);
+      const data = await apiData.json();
+      setCurrentMovie(data);
+
+      let id = movie.imdbID;
+      let newCache = {...cache, [id]: data}
+
+      console.log('making a new api call');
+
+      setCache(newCache)
+  }
+  else{
+
+      console.log('getting data from cache');
+
+      //retrieve the data from cache 
+      //setCurrentMovie
+      
+      setCurrentMovie(cache[movie.imdbID])
+  }
 }
-
+return (
+  <>
+    {movieData.map(movieObj=>{
+      return (<button key={movieData.imdbID} onClick={()=> handleClick(movieObj)}>
+              <h3>{movieObj.Title}</h3>
+              <img height="150px" src={movieObj.Poster} alt=""/>
+          </button>)
+    })}
+    <MovieDetail movie={currentMovie} />
+  </>
+)
+}
 export default App
-
+// let cache = {
+//     "tt4567" : {},
+//     "tt7896" : {}
+// }
