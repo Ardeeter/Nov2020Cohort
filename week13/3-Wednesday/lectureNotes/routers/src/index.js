@@ -40,6 +40,7 @@ ReactDOM.render(
           <Redirect from="/blog" to="/"/>
           <Route path="/comment" component={Comment} />
           <Route path="/sample1" component={Sample1} />
+          <Route path="/sample2/:id" component={Sample2} />
           <Route path="/sample2" component={Sample2} />
           <Route component={NoMatch} />
         </Switch>
