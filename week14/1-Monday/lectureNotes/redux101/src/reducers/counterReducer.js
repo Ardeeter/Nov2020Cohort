@@ -1,7 +1,8 @@
 
 
 let initialState = {
-    count: 0
+    count: 0,
+    title: "Counter Reducer"
 }
 
 const counterReducer = (state, action) => {

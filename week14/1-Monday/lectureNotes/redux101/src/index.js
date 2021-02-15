@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import reducer from './reducers/counterReducer'
 import App from './App';
 
-let store = createStore(reducer) //reducer
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) //reducer
 
 ReactDOM.render(
   <React.StrictMode>

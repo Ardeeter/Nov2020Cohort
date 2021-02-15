@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux' //pulls state from store
+import increaseAction from './actions/increaseAction'
+import decreaseAction from './actions/decreaseAction'
 
 
 class App extends Component {
@@ -26,13 +28,13 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.title}</h1>
+        <h1>{this.props.title}</h1>
 
-        <h1>{this.state.count}</h1>
+        <h1>{this.props.counter}</h1>
 
-        <button onClick={this.handleIncrease}>Increase</button>
+        <button onClick={this.props.onIncreaseClick}>Increase</button>
 
-        <button onClick={this.handleDecrease}>Increase</button>
+        <button onClick={this.props.onDecreaseClick}>Decrease</button>
       </>
     )
   }
@@ -42,8 +44,17 @@ class App extends Component {
 const mapStateToProps = (state) => {
   
   return {
-    counter: state.count
+    counter: state.count,
+    title: state.title
   }
 }
 
-export default connect(null, null)(App)
+const mapDispatchToProps = (dispatch) => {
+  
+  return {
+    onIncreaseClick: ()=> dispatch(increaseAction()),
+    onDecreaseClick: ()=> dispatch(decreaseAction())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
