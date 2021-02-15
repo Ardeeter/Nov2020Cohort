@@ -1,9 +1,8 @@
 
 const increaseAction = () => {
-    
     return {
-        type: 'INCREASE'
-    }
-}
-
-export default increaseAction;
+      type: "INCREASE"
+    };
+  };
+  
+  export default increaseAction;
