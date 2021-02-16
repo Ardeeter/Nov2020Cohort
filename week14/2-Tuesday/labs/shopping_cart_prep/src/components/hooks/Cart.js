@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import AddProduct from './AddProduct';
-import DeleteProduct from './AddProduct';
+import DeleteProduct from './DeleteProduct';
 
 
 const Cart = () => {
@@ -15,11 +15,11 @@ const Cart = () => {
 
         <AddProduct />
 
-        Total Cost: $ {totalCost}
+        Total Cost: $ {totalCost.toFixed(2)}
 
         <ul>
             {products.map(p => {
-                return <li key={p.id}>{p.productName} ${p.price}</li>
+                return <li key={p.id}>{p.productName} ${p.price} <DeleteProduct product={p} /></li>
             })}
         </ul>
     </>
