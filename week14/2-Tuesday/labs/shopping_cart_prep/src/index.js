@@ -9,21 +9,25 @@ import {
   Route, Switch
 } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import reducer from './reducers/cartReducer'
+import { createStore } from 'redux'; //Redux.createStore()
+import { Provider } from 'react-redux'
 
-
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) //initializing redux - reducer
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <BaseLayout>
-        <Switch>
-          <Route exact path='/' component={App}/>
-          <Route path='/cart' component={Cart}/>
-          <Route path='/products' component={Products}/>
-          
-        </Switch>
-      </BaseLayout>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <BaseLayout>
+          <Switch>
+            <Route exact path='/' component={App}/>
+            <Route path='/cart' component={Cart}/>
+            <Route path='/products' component={Products}/>
+          </Switch>
+        </BaseLayout>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
