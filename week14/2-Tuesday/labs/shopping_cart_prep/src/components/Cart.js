@@ -1,43 +1,48 @@
-import React, { Component } from 'react'
-import AddProduct from './AddProduct'
-import DeleteProduct from './DeleteProduct'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import AddProduct from "./AddProduct";
+import DeleteProduct from "./DeleteProduct";
+import { connect } from "react-redux";
 
 class Cart extends Component {
-  // display all of the items in the cart
-
+  //display all of the items in the cart
+  //
   render() {
     return (
       <>
         <h1 className="text-center">Shopping Cart</h1>
-          <div className="row">
-            <div className="col-6 offset-3">
-              Total Cost: ${this.props.totalCost}
 
-              <br/>
+        <div className="row">
+          <div className="col-6 offset-3">
 
-              <ul>
-                {this.props.products.map(p => {
-                  return <li key={p.id}>{p.productName} ${p.price}</li>
-                })}
-              </ul>
+            <AddProduct />
+            
+            Total Cost: ${this.props.totalCost.toFixed(2)}
+            <br />
+            <ul>
+              {this.props.products.map((p) => {
+                return (
+                  <li key={p.id}>
+                    {p.productName} ${p.price}
+                    &nbsp;
+                    <DeleteProduct product={p} />
+                  </li>
 
-            </div>
+                );
+              })}
+            </ul>
+
           </div>
-
-        
+        </div>
       </>
-    )
+    );
   }
 }
+
 const mapStateToProps = (state) => {
-  
   return {
     totalCost: state.totalCost,
-    products: state.cart
-  }
-}
+    products: state.cart,
+  };
+};
 
-
-export default connect(mapStateToProps, null)(Cart)
-
+export default connect(mapStateToProps, null)(Cart);
