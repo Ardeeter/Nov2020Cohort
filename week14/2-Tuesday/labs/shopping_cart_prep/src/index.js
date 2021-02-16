@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Cart from './components/Cart';
 import Products from './components/Products'
+import CartHooks from './components/hooks/Cart'
 import BaseLayout from './components/layout/BaseLayout'
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route exact path='/' component={App}/>
             <Route path='/cart' component={Cart}/>
             <Route path='/products' component={Products}/>
+            <Route path='/cart_with_hooks' component={CartHooks}/>
           </Switch>
         </BaseLayout>
       </Router>
