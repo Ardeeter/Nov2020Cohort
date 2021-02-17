@@ -13,7 +13,7 @@ const AddProduct = () => {
         //dispatch(addProduct(product))
 
         let product = {
-            in: uuidv1(),
+            id: uuidv1(),
             productName: e.target.name.value,
             price: e.target.price.value
         }
