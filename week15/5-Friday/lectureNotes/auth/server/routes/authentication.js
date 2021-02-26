@@ -1,67 +1,76 @@
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const bcrypt = require('bcryptjs'); // encrypt passwords
-const db = require('../models');
+const bcrypt = require("bcryptjs"); //encrypt passwords
+const db = require("../models");
+const config = require('../secrets');
 
-router.use(express.urlencoded({extended: false})); // scrape email and password from request header
+router.use(express.urlencoded({ extended: false })); //scrape email and pass from request header
 router.use(express.json());
 
-const jwt = require('jwt-simple');
+const jwt = require("jwt-simple"); //used to create a jwt
 
-router.get('/', (req, res) => {
+/**
+ * This function return a jwt
+ */
+const token = (user) => {
+    
+    let timestamp = new Date().getTime();  //current time
 
-    res.send('Hello World')
+    return jwt.encode({sub: user.id, iat: timestamp}, config.secret)
+}
+
+
+router.get("/", (req, res) => {
+  res.send("hello world");
 });
 
-// logging in eith credentials
-router.post('/signin', (req, res) => {
+/**
+ * logging in with credentials
+ */
+router.post("/signin", (req, res) => {
+  //validate user
 
-    // validate user
+  //send token
+  res.send("token");
+});
 
-    // send token
-    
-    res.send('token')
-})
+/**
+ * registering a new user in our database and send back a jwt
+ */
+router.post("/signup", async (req, res) => {
+  //body-parse to scrape info
+  //email, password
+  let email = req.body.email;
+  //encrypt: bcrypt
+  let password = bcrypt.hashSync(req.body.password, 8);
 
-// registering a new user in our database and send back a jwt
+  //models- store in database
+  try {
+    let records = await db.user.findAll({ where: { email: email } });
 
-router.post('/signup', async (req, res) => {
+    if (records.length === 0) {
+      //add a new record
 
-    // body-parse to scrape info
-    // email, password
-    let email = req.body.email 
+      let user = await db.user.create({email: email, password: password});
 
-    // encrypt: bcrypt
-    let password = bcrypt.hashSync(req.body.password, 8);
+      let jwtToken = token(user); //token returns a jwt
 
-    // models - store in database
-    try{
-        let records = await db.user.findAll({where: {email: email}})
+      return res.json({token: jwtToken}); //passing a jwt to client
 
-        if (records.length === 0) {
-            // add a new record
-            let newRecord = await db.user.create({email: email, password: password})
+    } else {
+      //send back an error
 
-            return //token
-        }
-        else {
-            // send back error message
-
-            return res.status(422).send({error: 'Email already exists'})
-        }
-    } catch (error){
-        // send back error, can't access database
-        return res.status(423).send({error: `Can't access database`})
+      return res.status(422).send({error: 'Email already exists'})
     }
+  } catch (error) {
+      //send back error, can't access database
+      return res.status(423).send({error: `Can't access database`});
+  }
 
-    // create jwt token
+  //create jwt token
 
-    // send back a token
-  
-}
-)
-
+  //send back a token
+});
 
 module.exports = router;
